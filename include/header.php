@@ -1,4 +1,36 @@
-<nav class="flex">
+<div id="testsibling">
+    <div class="nordtest">nord</div>
+    <div>nord sibling</div>
+    <div>nord sibling</div>
+    <div>nord sibling</div>
+    <div class="sudtest">sud</div>
+    <div>sud sibling</div>
+    <div>sud sibling</div>
+    <div>sud sibling</div>
+    <div class="ouesttest">OUEST</div>
+    <div>ouest sibling</div>
+    <div>ouest sibling</div>
+    <div>ouest sibling</div>
+    <div class="esttest">EST</div>
+    <div>est sibling</div>
+    <div>est sibling</div>
+    <div>est sibling</div>
+    <div class="extratest">EXTRA</div>
+    <div>extra sibling</div>
+    <div>extra sibling</div>
+    <div>extra sibling</div>
+    <div class="extraextratest"> EXTRA EXTRA</div>
+    <div>extra extra sibling</div>
+    <div>extra extra sibling</div>
+    <div>extra extra sibling</div>
+    <div class="extraextraextratest"> EXTRA EXTRA EXTRA</div>
+    <div>extra extra extra sibling</div>
+    <div>extra extra extra sibling</div>
+    <div>extra extra extra sibling</div>
+</div>
+
+
+<nav class="flex menu1">
     <div class="lundi dropdown">
         <a href="index.php?lundi"><button class="dropbtn">lundi</button></a>
         <div class="dropdown-content">
@@ -63,6 +95,56 @@
         </div>
     </div>
 </nav>
+<nav class="menu2">
+    <div class="hiver dropdown">
+            <a href=""><button class="dropbtn">hiver</button></a>
+            <div class="dropdown-content">
+                <a href="index.php?lhiver" ><button>Lundi</button></a>
+                <a href="index.php?mahiver" ><button>Mardi</button></a>
+                <a href="index.php?mehiver" ><button>Mercredi</button></a>
+                <a href="index.php?jhiver"><button>Jeudi</button></a>
+                <a href="index.php?vhiver" ><button>Vendredi</button></a>
+                <a href="index.php?shiver" ><button>Samedi</button></a>
+                <a href="index.php?dhiver"><button>Dimanche</button></a>
+            </div>
+    </div>
+    <div class="printemps dropdown">
+            <a href=""><button class="dropbtn">Printemps</button></a>
+            <div class="dropdown-content">
+                <a href="index.php?lprintemps" ><button>Lundi</button></a>
+                <a href="index.php?maprintemps" ><button>Mardi</button></a>
+                <a href="index.php?meprintemps" ><button>Mercredi</button></a>
+                <a href="index.php?jprintemps"><button>Jeudi</button></a>
+                <a href="index.php?vprintemps" ><button>Vendredi</button></a>
+                <a href="index.php?sprintemps" ><button>Samedi</button></a>
+                <a href="index.php?dprintemps"><button>Dimanche</button></a>
+            </div>
+    </div>
+    <div class="été dropdown">
+            <a href=""><button class="dropbtn">Eté</button></a>
+            <div class="dropdown-content">
+                <a href="index.php?lété" ><button>Lundi</button></a>
+                <a href="index.php?maété" ><button>Mardi</button></a>
+                <a href="index.php?meété" ><button>Mercredi</button></a>
+                <a href="index.php?jété"><button>Jeudi</button></a>
+                <a href="index.php?vété" ><button>Vendredi</button></a>
+                <a href="index.php?sété" ><button>Samedi</button></a>
+                <a href="index.php?dété"><button>Dimanche</button></a>
+            </div>
+    </div>
+    <div class="automne dropdown">
+            <a href=""><button class="dropbtn">Automne</button></a>
+            <div class="dropdown-content">
+                <a href="index.php?lautomne" ><button>Lundi</button></a>
+                <a href="index.php?maautomne" ><button>Mardi</button></a>
+                <a href="index.php?meautomne" ><button>Mercredi</button></a>
+                <a href="index.php?jautomne"><button>Jeudi</button></a>
+                <a href="index.php?vautomne" ><button>Vendredi</button></a>
+                <a href="index.php?sautomne" ><button>Samedi</button></a>
+                <a href="index.php?dautomne"><button>Dimanche</button></a>
+            </div>
+    </div>
+</nav>
 <div class="temp">
 
 <?php 
@@ -73,6 +155,15 @@ $lundi = array(
 "OUEST" => array("12°","13°","14°","15°"),
 "EST" => array("11°","14°","14°","14°")
 );
+if(isset($_GET['lundi'])) {
+    foreach ($lundi as $key => $value) { 
+        echo "<div id=\"$key\"> $key";
+         foreach ($value as $value1){
+             echo "<div> $value1 </div>";
+         }
+         echo "</div>";
+     }
+    }
 
 $lhiver = array(
     "NORD" => array("0°","2°","0°","5°"),
@@ -145,6 +236,15 @@ $mardi = array(
     "OUEST" => array("14°","13°","14°","14°"),
     "EST" => array("12°","13°","10°","15°")
     );
+if(isset($_GET['mardi'])) {
+    foreach ($mardi as $key => $value) { 
+    echo "<div id=\"$key\"> $key";
+        foreach ($value as $value1){
+            echo "<div> $value1 </div>";
+        }
+        echo "</div>";
+    }
+    }
 
 $mahiver = array(
     "NORD" => array("1°","1°","4°","3°"),
@@ -155,6 +255,22 @@ $mahiver = array(
 if(isset($_GET['mahiver'])) {
     foreach ($mahiver as $key => $value) { 
         echo "<div id=\"$key\" class=\"mahiver\"> $key";
+            foreach ($value as $value1){
+                echo "<div> $value1 </div>";
+            }
+            echo "</div>";
+        }
+} 
+$maété = array(
+    "NORD" => array("1°","2°","0°","5°"),
+    "SUD" => array("1°","12°","0°","15°"),
+    "OUEST" => array("2°","13°","14°","5°"),
+    "EST" => array("11°","1°","14°","14°")
+    );
+
+if(isset($_GET['maété'])) {
+    foreach ($maété as $key => $value) { 
+        echo "<div id=\"$key\" class=\"maété\"> $key";
             foreach ($value as $value1){
                 echo "<div> $value1 </div>";
             }
@@ -199,7 +315,15 @@ $mercredi = array(
     "OUEST" => array("14°","16°","16°","15°"),
     "EST" => array("17°","16°","16°","18°")
     );
-
+if(isset($_GET['mercredi'])) {
+    foreach ($mercredi as $key => $value) { 
+    echo "<div id=\"$key\"> $key";
+        foreach ($value as $value1){
+            echo "<div> $value1 </div>";
+        }
+        echo "</div>";
+    }
+    }
 $mehiver = array(
     "NORD" => array("1°","5°","4°","6°"),
     "SUD" => array("8°","8°","9°","0°"),
@@ -270,6 +394,15 @@ $jeudi = array(
 "OUEST" => array("17°","19°","20°","18°"),
 "EST" => array("16°","16°","16°","15°")
 );
+if(isset($_GET['jeudi'])) {
+    foreach ($jeudi as $key => $value) { 
+    echo "<div id=\"$key\"> $key";
+        foreach ($value as $value1){
+            echo "<div> $value1 </div>";
+        }
+        echo "</div>";
+    }
+    }
 $jhiver = array(
     "NORD" => array("8°","7°","7°","8°"),
     "SUD" => array("8°","8°","7°","9°"),
@@ -338,11 +471,20 @@ $vendredi = array(
 "OUEST" => array("14°","13°","14°","10°"),
 "EST" => array("10°","12°","10°","15°")
 );
+if(isset($_GET['vendredi'])) {
+    foreach ($vendredi as $key => $value) { 
+    echo "<div id=\"$key\"> $key";
+        foreach ($value as $value1){
+            echo "<div> $value1 </div>";
+        }
+        echo "</div>";
+    }
+    }
 $vhiver = array(
-    "NORD" => array("14°","14°","14°","15°"),
-    "SUD" => array("21°","22°","22°","23°"),
-    "OUEST" => array("14°","13°","14°","10°"),
-    "EST" => array("10°","12°","10°","15°")
+    "NORD" => array("4°","2°","4°","5°"),
+    "SUD" => array("8°","7°","7°","7°"),
+    "OUEST" => array("3°","1°","3°","3°"),
+    "EST" => array("0°","2°","0°","5°")
     );
 if(isset($_GET['vhiver'])) {
     foreach ($vhiver as $key => $value) { 
@@ -355,8 +497,8 @@ if(isset($_GET['vhiver'])) {
 } 
 $vprintemps = array(
     "NORD" => array("14°","14°","14°","15°"),
-    "SUD" => array("21°","22°","22°","23°"),
-    "OUEST" => array("14°","13°","14°","10°"),
+    "SUD" => array("19°","18°","18°","19°"),
+    "OUEST" => array("13°","11°","13°","13°"),
     "EST" => array("10°","12°","10°","15°")
     );
 if(isset($_GET['vprintemps'])) {
@@ -370,10 +512,10 @@ echo "<div id=\"$key\" class=\"vprintemps\"> $key";
 } 
 
 $vété = array(
-"NORD" => array("14°","14°","14°","15°"),
-"SUD" => array("21°","22°","22°","23°"),
-"OUEST" => array("14°","13°","14°","10°"),
-"EST" => array("10°","12°","10°","15°")
+"NORD" => array("24°","14°","34°","19°"),
+"SUD" => array("21°","12°","22°","23°"),
+"OUEST" => array("36°","23°","12°","19°"),
+"EST" => array("19°","19°","10°","15°")
 );
 if(isset($_GET['vété'])) {
 foreach ($vété as $key => $value) { 
@@ -385,10 +527,10 @@ foreach ($vété as $key => $value) {
     }
 } 
 $vautomne = array(
-"NORD" => array("14°","14°","14°","15°"),
-"SUD" => array("21°","22°","22°","23°"),
-"OUEST" => array("14°","13°","14°","10°"),
-"EST" => array("10°","12°","10°","15°")
+"NORD" => array("14°","4°","14°","15°"),
+"SUD" => array("1°","2°","2°","23°"),
+"OUEST" => array("4°","13°","14°","0°"),
+"EST" => array("1°","2°","10°","15°")
 );
 if(isset($_GET['vautomne'])) {
     foreach ($vautomne as $key => $value) { 
@@ -399,7 +541,7 @@ if(isset($_GET['vautomne'])) {
             echo "</div>";
         }
 } 
-
+//---------------- samedi---------//
 
 $samedi = array(
 "NORD" => array("14°","12°","14°","14°"),
@@ -407,68 +549,84 @@ $samedi = array(
 "OUEST" => array("14°","16°","16°","15°"),
 "EST" => array("17°","16°","16°","18°")
 );
+if(isset($_GET['samedi'])) {
+    foreach ($samedi as $key => $value) { 
+    echo "<div id=\"$key\"> $key";
+        foreach ($value as $value1){
+            echo "<div> $value1 </div>";
+        }
+        echo "</div>";
+    }
+    }
+$shiver = array(
+    "NORD" => array("4°","2°","4°","4°"),
+    "SUD" => array("8°","7°","7°","7°"),
+    "OUEST" => array("3°","1°","3°","3°"),
+    "EST" => array("0°","2°","0°","5°")
+    );
+if(isset($_GET['shiver'])) {
+    foreach ($shiver as $key => $value) { 
+        echo "<div id=\"$key\" class=\"shiver\"> $key";
+            foreach ($value as $value1){
+                echo "<div> $value1 </div>";
+            }
+            echo "</div>";
+        }
+} 
+$sprintemps = array(
+    "NORD" => array("14°","12°","14°","14°"),
+    "SUD" => array("18°","17°","17°","27°"),
+    "OUEST" => array("13°","16°","13°","13°"),
+    "EST" => array("10°","12°","10°","15°")
+    );
+if(isset($_GET['sprintemps'])) {
+    foreach ($sprintemps as $key => $value) { 
+        echo "<div id=\"$key\" class=\"sprintemps\"> $key";
+            foreach ($value as $value1){
+                echo "<div> $value1 </div>";
+            }
+            echo "</div>";
+        }
+} 
+$sété = array(
+    "NORD" => array("34°","32°","34°","34°"),
+    "SUD" => array("28°","28°","29°","20°"),
+    "OUEST" => array("34°","36°","36°","35°"),
+    "EST" => array("27°","26°","26°","28°")
+    );
+if(isset($_GET['sété'])) {
+    foreach ($sété as $key => $value) { 
+        echo "<div id=\"$key\" class=\"sété\"> $key";
+            foreach ($value as $value1){
+                echo "<div> $value1 </div>";
+            }
+            echo "</div>";
+        }
+} 
+$sautomne = array(
+    "NORD" => array("14°","22°","16°","13°"),
+    "SUD" => array("20°","18°","19°","26°"),
+    "OUEST" => array("14°","16°","15°","12°"),
+    "EST" => array("13°","12°","12°","13°")
+    );
+if(isset($_GET['sautomne'])) {
+    foreach ($sautomne as $key => $value) { 
+        echo "<div id=\"$key\" class=\"sautomne\"> $key";
+            foreach ($value as $value1){
+                echo "<div> $value1 </div>";
+            }
+            echo "</div>";
+        }
+} 
+
+
+//------------------- dimanche------//
 $dimanche = array(
 "NORD" => array("12°","12°","12°","12°"),
 "SUD" => array("18°","18°","17°","17°"),
 "OUEST" => array("14°","14°","14°","15°"),
 "EST" => array("10°","14°","10°","14°")
 );
-
-if(isset($_GET['lundi'])) {
-foreach ($lundi as $key => $value) { 
-    echo "<div id=\"$key\"> $key";
-     foreach ($value as $value1){
-         echo "<div> $value1 </div>";
-     }
-     echo "</div>";
- }
-}
-if(isset($_GET['mardi'])) {
-foreach ($mardi as $key => $value) { 
-echo "<div id=\"$key\"> $key";
-    foreach ($value as $value1){
-        echo "<div> $value1 </div>";
-    }
-    echo "</div>";
-}
-}
-if(isset($_GET['mercredi'])) {
-foreach ($mercredi as $key => $value) { 
-echo "<div id=\"$key\"> $key";
-    foreach ($value as $value1){
-        echo "<div> $value1 </div>";
-    }
-    echo "</div>";
-}
-}
-if(isset($_GET['jeudi'])) {
-foreach ($jeudi as $key => $value) { 
-echo "<div id=\"$key\"> $key";
-    foreach ($value as $value1){
-        echo "<div> $value1 </div>";
-    }
-    echo "</div>";
-}
-}
-if(isset($_GET['vendredi'])) {
-foreach ($vendredi as $key => $value) { 
-echo "<div id=\"$key\"> $key";
-    foreach ($value as $value1){
-        echo "<div> $value1 </div>";
-    }
-    echo "</div>";
-}
-}
-if(isset($_GET['samedi'])) {
-foreach ($samedi as $key => $value) { 
-echo "<div id=\"$key\"> $key";
-    foreach ($value as $value1){
-        echo "<div> $value1 </div>";
-    }
-    echo "</div>";
-}
-}
-
 if(isset($_GET['dimanche'])) {
 foreach ($dimanche as $key => $value) { 
 echo "<div id=\"$key\"> $key";
@@ -478,7 +636,66 @@ echo "<div id=\"$key\"> $key";
     echo "</div>";
 }
 }
+$dhiver = array(
+    "NORD" => array("2°","2°","2°","2°"),
+    "SUD" => array("8°","8°","7°","7°"),
+    "OUEST" => array("4°","4°","4°","5°"),
+    "EST" => array("0°","4°","0°","4°")
+    );
+if(isset($_GET['dhiver'])) {
+    foreach ($dhiver as $key => $value) { 
+        echo "<div id=\"$key\" class=\"dhiver\"> $key";
+            foreach ($value as $value1){
+                echo "<div> $value1 </div>";
+            }
+            echo "</div>";
+        }
+}    
+$dprintemps = array(
+    "NORD" => array("12°","12°","12°","12°"),
+    "SUD" => array("18°","18°","17°","17°"),
+    "OUEST" => array("14°","14°","14°","15°"),
+    "EST" => array("10°","14°","10°","14°")
+    );
+if(isset($_GET['dprintemps'])) {
+    foreach ($dprintemps as $key => $value) { 
+        echo "<div id=\"$key\" class=\"dprintemps\"> $key";
+            foreach ($value as $value1){
+                echo "<div> $value1 </div>";
+            }
+            echo "</div>";
+        }
+}   
+$dété = array(
+    "NORD" => array("14°","14°","14°","14°"),
+    "SUD" => array("16°","16°","16°","16°"),
+    "OUEST" => array("18°","18°","18°","18°"),
+    "EST" => array("18°","18°","18°","18°")
+    );
+if(isset($_GET['dété'])) {
+    foreach ($dété as $key => $value) { 
+        echo "<div id=\"$key\" class=\"dété\"> $key";
+            foreach ($value as $value1){
+                echo "<div> $value1 </div>";
+            }
+            echo "</div>";
+        }
+}  
+$dautomne = array(
+    "NORD" => array("2°","2°","12°","12°"),
+    "SUD" => array("8°","8°","7°","7°"),
+    "OUEST" => array("4°","1°","4°","5°"),
+    "EST" => array("1°","1°","1°","1°")
+    );
+if(isset($_GET['dautomne'])) {
+    foreach ($dautomne as $key => $value) { 
+        echo "<div id=\"$key\" class=\"dautomne\"> $key";
+            foreach ($value as $value1){
+                echo "<div> $value1 </div>";
+            }
+            echo "</div>";
+        }
+} 
+
 ?>
 </div>
-
- 

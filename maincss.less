@@ -293,12 +293,14 @@ footer {
 .dropdown {
     position: relative;
     display: inline-block;
+    min-width: 160px;
+    background-color: #0069ed;
   }
   
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #0069ed;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -306,6 +308,10 @@ footer {
   
   .dropdown:hover .dropdown-content {
     display: block;
+    transition: all 0.6s;
+  }
+  .dropdown:hover {
+    transition: all 0.6s;
   }
 
 .temp .lhiver {
@@ -466,6 +472,178 @@ footer {
             
     }
     
+}
+.temp .sprintemps {
+    &:nth-of-type(2) {
+        &::after {
+            content: '';
+            background-image: url(img/meteorite.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: block;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: -50px;
+            }
+            
+    }
+    
+}
+.temp .sautomne {
+    &:nth-of-type(1) {
+        &::after {
+            content: '';
+            background-image: url(img/orage.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: block;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: -50px;
+            }
+            
+    }
+    
+}
+.temp .dhiver {
+    &:nth-of-type(49) {
+        &::after {
+            content: '';
+            background-image: url(img/meteorite.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: block;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: -50px;
+            }
+            
+    }
+    
+}
+.temp .dprintemps {
+    &:nth-of-type(1) {
+        &::after {
+            content: '';
+            background-image: url(img/tornade.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: block;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: -50px;
+            }
+        &::before {
+            content: '';
+            background-image: url(img/ovni.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: block;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: -100px;
+        }  
+    }
+    &:nth-of-type(2),&:nth-of-type(3),&:nth-of-type(4) {
+        &::after {
+            content: '';
+            background-image: url(img/tornade.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: block;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: -50px;
+            }
+        }
+}
+.temp .dété {
+    &:nth-of-type(1) {
+        &::after {
+            content: '';
+            background-image: url(img/orage.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: block;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: -50px;
+            }
+            
+    }
+    
+}
+.temp .dautomne {
+    &:nth-of-type(4) {
+        &::after {
+            content: '';
+            background-image: url(img/orage.png), url(img/meteorite.png);
+            background-position: left top, right top;
+            background-size: 50px;
+            background-repeat: no-repeat;
+            display: block;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            top: -50px;
+            }
+        &::before {
+            content: '';
+            background-image: url(img/ovni.png), url(img/tornade.png);
+            background-position: left top, right top;
+            background-size: 50px;
+            background-repeat: no-repeat;
+            display: block;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            top: -100px;
+        }  
+            
+            
+    }
     
 }
 
+#testsibling {
+    display: none;
+    min-height: 100vh;
+    background-color: rgb(195, 173, 173);
+    padding-left: 200px;
+    padding-top: 200px;
+    .nordtest ~ div:not(.sudest) {
+        color: red;
+        
+    }
+    .sudtest ~ div:not(.ouesttest ~ div){
+        color: #0069ed;
+    }
+    .esttest ~ div:not(.extratest ~ div):not(.extratest) {
+        color: white;
+    }
+    // .esttest ~ div:not(.extratest, .extratest ~ div) {
+    //     color: white;
+    // }
+    //simplifier 
+
+    .extraextratest, .extraextratest ~ div:not(.extraextraextratest ~ div, .extraextraextratest)  {
+        color: yellow !important;
+    }
+}
+.menu1 {
+    display: none;
+}
